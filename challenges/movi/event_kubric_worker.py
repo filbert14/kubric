@@ -48,8 +48,8 @@ parser.add_argument("--hdri_assets", type=str,
 parser.add_argument("--gso_assets", type=str,
                     default="gs://kubric-public/assets/GSO/GSO.json")
 parser.add_argument("--save_state", dest="save_state", action="store_true")
-parser.set_defaults(save_state=False, frame_end=24, frame_rate=12,
-                    resolution=256)
+parser.set_defaults(save_state=False, frame_end=96, frame_rate=48,
+                    resolution=512)
 FLAGS = parser.parse_args()
 
 # --- Common setups & resources
