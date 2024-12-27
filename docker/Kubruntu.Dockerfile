@@ -7,7 +7,7 @@
 #   kubricdockerhub/kubruntu:latest \
 #   python3 examples/helloworld.py
 
-FROM kubricdockerhub/blender:latest
+FROM kubricdockerhub/blender-gpu:latest
 
 WORKDIR /kubric
 
@@ -31,3 +31,5 @@ ENV TF_CPP_MIN_LOG_LEVEL="3"
 COPY dist/kubric*.whl .
 RUN pip3 install `ls kubric*.whl`
 RUN rm -f kubric*.whl
+
+COPY kubric/renderer/blender.py  /usr/local/lib/python3.9/dist-packages/kubric/renderer/blender.py
